@@ -1,0 +1,38 @@
+.skills-cat {
+  font-family: var(--font-code);
+  font-size: 0.75rem;
+  color: var(--neon2);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 2.5rem 0 1rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 1rem;
+}
+
+.skill-chip {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 1.1rem 1rem;
+  text-align: center;
+  transition: border-color 0.2s, transform 0.2s;
+  cursor: default;
+}
+
+.skill-chip:hover {
+  border-color: var(--neon);
+  transform: translateY(-4px);
+}
+
+.skill-icon { font-size: 1.6rem; margin-bottom: 0.5rem; }
+
+.skill-name {
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-family: var(--font-code);
+}
+
+.skill-chip:hover .skill-name { color: var(--neon); }

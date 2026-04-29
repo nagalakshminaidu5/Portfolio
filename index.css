@@ -1,0 +1,167 @@
+/* ===== GLOBAL RESET & VARIABLES ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #eef2f7;
+  --bg2: #e4e9f2;
+  --card: #ffffff;
+
+  --primary: #4f6ef7;
+  --primary2: #8a5cff;
+
+  --text: #1e2a3a;
+  --muted: #6b7280;
+  --border: #dfe3eb;
+
+  --font-main: 'Space Grotesk', sans-serif;
+  --font-code: 'Fira Code', monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  background: linear-gradient(135deg, #eef2f7, #e6ebf3);
+  color: var(--text);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 3px;
+}
+
+/* ===== GRID BACKGROUND ===== */
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(180,180,200,0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(180,180,200,0.2) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+/* ===== SECTION COMMONS ===== */
+section {
+  padding: 6rem 2rem;
+}
+
+.sec-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.sec-label {
+  font-family: var(--font-code);
+  font-size: 0.8rem;
+  color: var(--primary);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.sec-title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 3rem;
+}
+
+.sec-title .dim {
+  color: var(--muted);
+}
+
+/* ===== BUTTONS ===== */
+.btn-primary {
+  padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary2));
+  color: #fff;
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(79, 110, 247, 0.3);
+}
+
+.btn-outline {
+  padding: 0.75rem 2rem;
+  background: #ffffff;
+  color: var(--primary);
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: #f3f6fb;
+  transform: translateY(-2px);
+}
+
+/* ===== CARD STYLE ===== */
+.card {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* ===== SECTION BG ALTERNATION ===== */
+.bg-alt {
+  background-color: var(--bg2);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  section {
+    padding: 4rem 1.25rem;
+  }
+}

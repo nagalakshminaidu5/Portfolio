@@ -1,0 +1,71 @@
+.exp-list {
+  border-left: 1px solid var(--border);
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.exp-item {
+  padding: 0 0 2.5rem 2rem;
+  position: relative;
+}
+
+.exp-dot {
+  position: absolute;
+  left: -5px; top: 4px;
+  width: 9px; height: 9px;
+  background: var(--neon2);
+  border-radius: 50%;
+}
+
+.exp-period { font-family: var(--font-code); font-size: 0.78rem; color: var(--neon); margin-bottom: 0.25rem; }
+.exp-role { font-size: 1rem; font-weight: 600; margin-bottom: 0.2rem; }
+.exp-company { font-size: 0.875rem; color: var(--muted); margin-bottom: 0.6rem; }
+.exp-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+
+.subsec-label {
+  font-family: var(--font-code);
+  font-size: 0.75rem;
+  color: var(--neon2);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 3rem 0 1.25rem;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.cert-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 0.9rem 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: border-color 0.2s;
+}
+
+.cert-card:hover { border-color: var(--neon); }
+.cert-icon { font-size: 1.1rem; }
+.cert-name { font-size: 0.83rem; color: var(--muted); }
+
+.achieve-list { display: flex; flex-direction: column; gap: 0.85rem; }
+
+.achieve-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: border-color 0.2s;
+}
+
+.achieve-item:hover { border-color: var(--neon3); }
+.achieve-icon { font-size: 1.2rem; flex-shrink: 0; }
+.achieve-text { font-size: 0.875rem; color: var(--muted); line-height: 1.65; }

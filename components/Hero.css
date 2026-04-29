@@ -1,0 +1,219 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 6rem 2rem 4rem;
+  position: relative;
+  overflow: hidden;
+  gap: 4rem;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(80px);
+}
+.blob-1 {
+  top: -200px; right: -150px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(123,92,255,0.13) 0%, transparent 70%);
+}
+.blob-2 {
+  bottom: -200px; left: -100px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(0,255,224,0.08) 0%, transparent 70%);
+}
+
+.hero-inner {
+  max-width: 580px;
+  flex: 1;
+  z-index: 1;
+}
+
+.hero-tag {
+  font-family: var(--font-code);
+  color: var(--neon);
+  font-size: 0.82rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  letter-spacing: 0.08em;
+}
+
+.tag-dot {
+  width: 8px; height: 8px;
+  background: var(--neon);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+.hero-name {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-name .accent {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--neon2);
+}
+
+.hero-role {
+  font-family: var(--font-code);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+
+.hero-role .prompt {
+  color: var(--muted);
+}
+
+.hero-role .typed {
+  color: var(--neon);
+}
+
+.cursor {
+  animation: blink 0.8s step-end infinite;
+  color: var(--neon);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.hero-desc {
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 2.25rem;
+  font-size: 1rem;
+  max-width: 500px;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-num {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--neon);
+  font-family: var(--font-code);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 0.25rem;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--border);
+}
+
+.scroll-hint {
+  font-family: var(--font-code);
+  font-size: 0.75rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.scroll-line {
+  display: inline-block;
+  width: 50px;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ===== HERO VISUAL ===== */
+.hero-visual {
+  position: relative;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.hero-img-wrap {
+  position: relative;
+  width: 320px;
+  height: 400px;
+}
+
+.hero-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(20%);
+}
+
+.img-border {
+  position: absolute;
+  inset: -10px;
+  border: 1px solid var(--neon2);
+  opacity: 0.35;
+  z-index: -1;
+}
+
+.floating-badge {
+  position: absolute;
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.9rem;
+  font-family: var(--font-code);
+  font-size: 0.78rem;
+  color: var(--neon);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  animation: float 3s ease-in-out infinite;
+  white-space: nowrap;
+}
+
+.badge-1 { top: 10%; left: -80px; animation-delay: 0s; }
+.badge-2 { top: 50%; right: -90px; animation-delay: 1s; }
+.badge-3 { bottom: 10%; left: -70px; animation-delay: 0.5s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@media (max-width: 900px) {
+  .hero { flex-direction: column; text-align: center; align-items: center; }
+  .hero-inner { max-width: 100%; }
+  .hero-btns { justify-content: center; }
+  .hero-stats { justify-content: center; }
+  .hero-visual { display: none; }
+  .scroll-hint { justify-content: center; }
+}
